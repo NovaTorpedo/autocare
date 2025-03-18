@@ -1,4 +1,7 @@
 from django.urls import path
+from .views import register_garage, search_garages
+from django.conf import settings
+from django.conf.urls.static import static
 
 from . import views
 
@@ -13,5 +16,10 @@ urlpatterns = [
     path("404", views.not_found, name="404"),
     path("locate", views.locate, name="locate"),
     path("chat", views.chat, name="chat"),
-
+    path('register-garage', views.register_garage, name='register_garage'),
+    path('search-garages', views.search_garages, name='search_garages'),
     ]
+
+# Serve media files in development mode
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
