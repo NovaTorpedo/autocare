@@ -18,6 +18,9 @@ urlpatterns = [
     path("chat", views.chat, name="chat"),
     path('register-garage', views.register_garage, name='register_garage'),
     path('search-garages', views.search_garages, name='search_garages'),
+    path("login", views.login_view, name="login"),
+    path("logout", views.logout_view, name="logout"),
+    path("register", views.register, name="register"),
     ]
 
 # Serve media files in development mode
